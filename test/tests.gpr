@@ -1,0 +1,8 @@
+with "../pwmcp.gpr";
+with "aunit.gpr";
+project Tests is
+   for Source_Dirs use ("./");
+   for Object_Dir use "obj";
+   for Main use ("test_driver.adb");
+  
+end Tests;
