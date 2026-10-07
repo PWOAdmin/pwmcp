@@ -1,5 +1,5 @@
 lib_LTLIBRARIES = libpwmcp.la
-libcompanyaddr_la_SOURCES=src/pwmcp.ads
+libpwmcp_la_SOURCES=src/pwmcp.ads
 obj_DIRS=obj
 LIBS=
 EXTRA_DIST = pwauth.gpr test/tests.gpr tests/*.ad* src/*
@@ -23,3 +23,4 @@ clean-local:
 	rm -rf configure~
 	rm -rf autom4te.cache/*
 	rm -rf autom4te.cache
+	rm -f =*~
