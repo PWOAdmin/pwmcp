@@ -27,7 +27,7 @@ end record;
 
  function "=" (Left, Right : Mcp_Tool_Type) return Boolean;
 
- procedure Setup (Tool: Mcp_Tool_Type) is abstract;
+ procedure Setup (Tool: in out Mcp_Tool_Type) is abstract;
 
  procedure Execute (Tool: in out Mcp_Tool_Type) is abstract;
 
