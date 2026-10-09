@@ -48,4 +48,15 @@ package body Mcp_Tool is
       return val;
    end Schema_JSON;
 
+   function Tool_JSON (Tool: Mcp_Tool_Type) return GNATCOLL.JSON.JSON_Value
+   is
+   Val: JSON.JSON_Value:=JSON.Create_Object;
+   begin
+Val.Set_Field ("name", R.To_String(Tool.Name));
+Val.Set_Field ("description", R.To_String(Tool.Description));
+Val.Set_Field ("inputSchema", Schema_JSON(Tool.Input_Schema));
+Val.Set_Field ("outputSchema", Schema_JSON(Tool.Output_Schema));
+return val;
+   end Tool_JSON;
+
 end Mcp_Tool;
