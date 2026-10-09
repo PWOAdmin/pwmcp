@@ -1,5 +1,6 @@
 with "../pwmcp.gpr";
-with "aunit.gpr";
+with "gnatcoll_core";
+with "aunit";
 project Tests is
    for Source_Dirs use ("./");
    for Object_Dir use "obj";

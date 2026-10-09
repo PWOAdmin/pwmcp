@@ -3,3 +3,9 @@
 
 # Ada Library Information
 *.ali
+
+test/obj
+obj/
+build/
+.libs
+autom4te.cache
