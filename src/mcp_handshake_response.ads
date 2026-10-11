@@ -20,7 +20,6 @@ type Handhake_Response_Type is new Mcp_Response.Mcp_Response_Type with record
 Parent: Mcp_Response.Mcp_Response_Type;
 Server_Info: Server_Info_Type;
 Capabiliities: Capabilities_Type;
-
 end record;
 
 function To_JSON (Response: Handhake_Response_Type) return GNATCOLL.JSON.JSON_Value;

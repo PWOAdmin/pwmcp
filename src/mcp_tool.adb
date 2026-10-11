@@ -1,5 +1,8 @@
+
 package body Mcp_Tool is
    use GNATCOLL;
+
+
 
    package R renames PW_Config.MCP_Record_Fields;
    function "=" (Left, Right : Tool_Property_Type) return Boolean is
@@ -48,7 +51,7 @@ package body Mcp_Tool is
       return val;
    end Schema_JSON;
 
-   function Tool_JSON (Tool: Mcp_Tool_Type) return GNATCOLL.JSON.JSON_Value
+   function Tool_JSON (Tool: Mcp_Tool_Type'Class) return GNATCOLL.JSON.JSON_Value
    is
    Val: JSON.JSON_Value:=JSON.Create_Object;
    begin

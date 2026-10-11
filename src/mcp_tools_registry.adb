@@ -3,7 +3,7 @@ with Mcp_Response;
 package body Mcp_Tools_Registry is
    use GNATCOLL;
    procedure Register_Tool
-     (Tool : Mcp_Tool.Mcp_Tool_Type'class) is
+     (Tool : Mcp_Tool.Mcp_Tool_Type'Class) is
    begin
       Registry.Append (Tool);
    end Register_Tool;
@@ -28,4 +28,4 @@ package body Mcp_Tools_Registry is
       return Val;
    end Create_Tools_JSON_Response;
 
-end Mcp_Tools_Registry;
+  end Mcp_Tools_Registry;
