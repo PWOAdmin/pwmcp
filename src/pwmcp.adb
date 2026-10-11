@@ -53,7 +53,10 @@ if JSON.Has_Field (Input_JS, "method") then
 declare
 Method: constant String:=JSON.Get (Input_JS, "method");
 begin
-   if Method = "initialize" then return On_Initialize(Handshake); end if;
+   if Method = "initialize" then 
+   Handshake.Parent.Id:=Id;
+   return On_Initialize(Handshake); 
+   end if;
    If Method = "tools/list" then return JSON.Write (Mcp_Tools_Registry.Create_Tools_JSON_Response(Id)); end if;
    If Method = "tools/call" then return On_Tools_Call (Input_JS); end if;
 end;
