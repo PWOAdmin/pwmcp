@@ -62,16 +62,4 @@ Val.Set_Field ("outputSchema", Schema_JSON(Tool.Output_Schema));
 return val;
    end Tool_JSON;
 
-    procedure Setup (Tool: in out Mcp_Tool_Type'class)
-    is
-    begin
-    null;
-    end Setup;
-
- function Execute (Tool: in out  Mcp_Tool_Type'class) return GNATCOLL.JSON.JsON_Value
- is
- begin
- return JSON.Create_Object;
- end Execute;
-
 end Mcp_Tool;
