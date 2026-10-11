@@ -18,7 +18,7 @@ end record;
  
 
 
-Type Mcp_Tool_Type is abstract tagged record
+Type Mcp_Tool_Type is tagged record
 Name: Mcp_String;
 Description: Mcp_String;
 Input_Schema: Schema.Vector;
@@ -28,9 +28,9 @@ end record;
 
  function "=" (Left, Right : Mcp_Tool_Type) return Boolean;
 
- procedure Setup (Tool: in out Mcp_Tool_Type) is abstract;
+ procedure Setup (Tool: in out Mcp_Tool_Type'class);
 
- function Execute (Tool: in out  Mcp_Tool_Type) return GNATCOLL.JSON.JsON_Value is abstract;
+ function Execute (Tool: in out  Mcp_Tool_Type'class) return GNATCOLL.JSON.JsON_Value;
 
  function Property_JSON (Prop: Tool_Property_Type) return GNATCOLL.JSON.Json_Value;
  function Schema_JSON (S: Schema.Vector) return GNATCOLL.JSON.JSON_Value;

@@ -54,8 +54,12 @@ declare
 Method: constant String:=JSON.Get (Input_JS, "method");
 begin
    if Method = "initialize" then 
-   Handshake.Parent.Id:=Id;
-   return On_Initialize(Handshake); 
+   declare 
+      HS_Copy: Mcp_Handshake_Response.Handhake_Response_Type:=Handshake;
+      begin
+    HS_Copy.Parent.Id:=Id;
+   return On_Initialize(HS_Copy);
+   end; 
    end if;
    If Method = "tools/list" then return JSON.Write (Mcp_Tools_Registry.Create_Tools_JSON_Response(Id)); end if;
    If Method = "tools/call" then return On_Tools_Call (Input_JS); end if;
